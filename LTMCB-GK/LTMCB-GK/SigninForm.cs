@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace LTMCB_GK
 {
-    public partial class SigninForm : Form
+    public partial class frm_SigninForm : Form
     {
         private TcpClientModel tcp;
-        public SigninForm(TcpClientModel tcp)
+        public frm_SigninForm(TcpClientModel tcp)
         {
             this.tcp = tcp;
             InitializeComponent();
@@ -23,20 +23,21 @@ namespace LTMCB_GK
         {
             string usr = txt_Username.Text;
             string pw = txt_Password.Text;
-            string data = "Signin:" + usr + ";" + pw;
-            int iSuccess = tcp.sendData(data);
+            string sendData = "Signin:" + usr + ";" + pw;
+            int iSuccess = tcp.sendData(sendData);
             if(iSuccess == -1)
             {
                 MessageBox.Show("Connection Error!");
                 return;
             }
-            iSuccess = tcp.receiveData(ref data);
+            string receiveData = null;
+            iSuccess = tcp.receiveData(ref receiveData);
             if (iSuccess == -1)
             {
                 MessageBox.Show("Connection Error..");
                 return;
             }
-            string[] dataformat = data.Split(
+            string[] dataformat = receiveData.Split(
                 new char[] { ':', ';' });
             if(dataformat[0]!="Success")
             {
@@ -54,9 +55,14 @@ namespace LTMCB_GK
             i.MpR = dataformat[3];
 
             this.Hide();
-            MainForm frm = new MainForm(tcp, i);
+            frm_MainForm frm = new frm_MainForm(tcp, i);
             frm.ShowDialog();
             this.Show();
+        }
+
+        private void lbl_Username_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

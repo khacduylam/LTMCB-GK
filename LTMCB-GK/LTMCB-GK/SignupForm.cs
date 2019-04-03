@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace LTMCB_GK
 {
-    public partial class SignupForm : Form
+    public partial class frm_SignupForm : Form
     {
         private TcpClientModel tcp;
-        public SignupForm(TcpClientModel tcp)
+        public frm_SignupForm(TcpClientModel tcp)
         {
             this.tcp = tcp;
             InitializeComponent();
@@ -31,21 +31,22 @@ namespace LTMCB_GK
                 return;
             }
 
-            string data = "Signup:" + usr + ";" + pw;
-            int iSuccess = tcp.sendData(data);
+            string senddata = "Signup:" + usr + ";" + pw;
+            int iSuccess = tcp.sendData(senddata);
             if (iSuccess == -1)
             {
                 MessageBox.Show("Connection Error!");
                 return;
             }
-            iSuccess = tcp.receiveData(ref data);
+            string receiveData = null;
+            iSuccess = tcp.receiveData(ref receiveData);
             if (iSuccess == -1)
             {
                 MessageBox.Show("Connection Error..");
                 return;
             }
-            string[] dataformat = data.Split(':');
-            MessageBox.Show(data);
+            string[] dataformat = receiveData.Split(':');
+            MessageBox.Show(receiveData);
             if (dataformat[0] != "Success")
             {
                 return;

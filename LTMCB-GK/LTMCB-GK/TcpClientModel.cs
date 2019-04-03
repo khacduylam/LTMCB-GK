@@ -18,8 +18,8 @@ namespace LTMCB_GK
     {
         private TcpClient tcpclnt;
         private Stream stm;
-        private byte[] byteSend;
-        private byte[] byteReceive;
+        //private byte[] byteSend;
+        //private byte[] byteReceive;
         private string IPofServer;
         private int port;
 
@@ -28,7 +28,8 @@ namespace LTMCB_GK
             IPofServer = ip;
             port = p;
             tcpclnt = new TcpClient();
-            byteReceive = new byte[100];
+
+            //byteReceive = new byte[100];
         }
 
         public int connectToServer()
@@ -52,7 +53,7 @@ namespace LTMCB_GK
             try
             {
                 ASCIIEncoding asen = new ASCIIEncoding();
-                byteSend = asen.GetBytes(str);
+                byte[] byteSend = asen.GetBytes(str);
                 stm.Write(byteSend, 0, byteSend.Length);
             }
             catch(Exception e)
@@ -67,8 +68,10 @@ namespace LTMCB_GK
         {
             try
             {
-                stm.Read(byteReceive, 0, 100);
-                str = System.Text.Encoding.ASCII.GetString(byteReceive);
+                byte[] byteReceive = new byte[100];
+                int len = stm.Read(byteReceive, 0, 100);
+
+                str = System.Text.Encoding.ASCII.GetString(byteReceive, 0, len);
                 Console.WriteLine("Received!");
             }
             catch(Exception e)
@@ -84,6 +87,7 @@ namespace LTMCB_GK
             tcpclnt.Close();
         }
 
+        
 
     }
 }

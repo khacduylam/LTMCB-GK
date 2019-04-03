@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace LTMCB_GK
 {
-    public partial class NavigationForm : Form
+    public partial class frm_NavigationForm : Form
     {
         private TcpClientModel tcp;
-        public NavigationForm(TcpClientModel tcp)
+        public frm_NavigationForm(TcpClientModel tcp)
         {
             this.tcp = tcp;
             InitializeComponent();
@@ -21,7 +21,7 @@ namespace LTMCB_GK
 
         private void btn_signin_Click(object sender, EventArgs e)
         {
-            SigninForm frm = new SigninForm(tcp);
+            frm_SigninForm frm = new frm_SigninForm(tcp);
             this.Hide();
             frm.ShowDialog();
             this.Show();
@@ -29,7 +29,7 @@ namespace LTMCB_GK
 
         private void btn_signup_Click(object sender, EventArgs e)
         {
-            SignupForm frm = new SignupForm(tcp);
+            frm_SignupForm frm = new frm_SignupForm(tcp);
             this.Hide();
             frm.ShowDialog();
             this.Show();

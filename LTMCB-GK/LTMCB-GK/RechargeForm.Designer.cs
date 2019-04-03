@@ -1,6 +1,6 @@
 ﻿namespace LTMCB_GK
 {
-    partial class RechargeForm
+    partial class frm_RechargeForm
     {
         /// <summary>
         /// Required designer variable.
@@ -37,47 +37,53 @@
             // 
             // txt_Money
             // 
+            this.txt_Money.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Money.Location = new System.Drawing.Point(66, 76);
             this.txt_Money.Name = "txt_Money";
-            this.txt_Money.Size = new System.Drawing.Size(192, 20);
+            this.txt_Money.Size = new System.Drawing.Size(192, 27);
             this.txt_Money.TabIndex = 0;
             // 
             // txt_Password
             // 
+            this.txt_Password.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Password.Location = new System.Drawing.Point(66, 179);
             this.txt_Password.Name = "txt_Password";
-            this.txt_Password.Size = new System.Drawing.Size(192, 20);
+            this.txt_Password.PasswordChar = '*';
+            this.txt_Password.Size = new System.Drawing.Size(192, 27);
             this.txt_Password.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(139, 44);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(133, 51);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(39, 13);
+            this.label1.Size = new System.Drawing.Size(56, 20);
             this.label1.TabIndex = 2;
             this.label1.Text = "Money";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(101, 149);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(73, 156);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(127, 13);
+            this.label2.Size = new System.Drawing.Size(185, 20);
             this.label2.TabIndex = 3;
             this.label2.Text = "Type password to accept";
             // 
             // btn_recharge
             // 
-            this.btn_recharge.Location = new System.Drawing.Point(334, 102);
+            this.btn_recharge.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_recharge.Location = new System.Drawing.Point(329, 88);
             this.btn_recharge.Name = "btn_recharge";
-            this.btn_recharge.Size = new System.Drawing.Size(91, 74);
+            this.btn_recharge.Size = new System.Drawing.Size(118, 74);
             this.btn_recharge.TabIndex = 4;
             this.btn_recharge.Text = "Recharge";
             this.btn_recharge.UseVisualStyleBackColor = true;
             this.btn_recharge.Click += new System.EventHandler(this.btn_recharge_Click);
             // 
-            // RechargeForm
+            // frm_RechargeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -87,9 +93,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txt_Password);
             this.Controls.Add(this.txt_Money);
-            this.Name = "RechargeForm";
+            this.Name = "frm_RechargeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "RechargeForm";
+            this.Text = "Recharge";
             this.ResumeLayout(false);
             this.PerformLayout();
 

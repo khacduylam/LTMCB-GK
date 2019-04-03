@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace LTMCB_GK
 {
-    public partial class ConnectForm : Form
+    public partial class frm_ConnectForm : Form
     {
-        public ConnectForm()
+        public frm_ConnectForm()
         {
             InitializeComponent();
         }
@@ -38,7 +38,7 @@ namespace LTMCB_GK
             }
             else
             {
-                NavigationForm frm = new NavigationForm(tcp);
+                frm_NavigationForm frm = new frm_NavigationForm(tcp);
                 this.Hide();
                 frm.ShowDialog();
                 tcp.sendData("Disconnected");

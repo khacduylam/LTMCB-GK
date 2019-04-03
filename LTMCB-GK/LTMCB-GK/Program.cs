@@ -16,7 +16,7 @@ namespace LTMCB_GK
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ConnectForm());
+            Application.Run(new frm_ConnectForm());
         }
     }
 }

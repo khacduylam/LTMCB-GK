@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace LTMCB_GK
 {
-    public partial class RechargeForm : Form
+    public partial class frm_RechargeForm : Form
     {
         private TcpClientModel tcp;
-        public RechargeForm(TcpClientModel tcp)
+        public frm_RechargeForm(TcpClientModel tcp)
         {
             this.tcp = tcp;
             InitializeComponent();

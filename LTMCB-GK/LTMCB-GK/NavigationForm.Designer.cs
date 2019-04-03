@@ -1,6 +1,6 @@
 ﻿namespace LTMCB_GK
 {
-    partial class NavigationForm
+    partial class frm_NavigationForm
     {
         /// <summary>
         /// Required designer variable.
@@ -35,7 +35,8 @@
             // 
             // btn_signin
             // 
-            this.btn_signin.Location = new System.Drawing.Point(31, 58);
+            this.btn_signin.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_signin.Location = new System.Drawing.Point(32, 66);
             this.btn_signin.Name = "btn_signin";
             this.btn_signin.Size = new System.Drawing.Size(138, 59);
             this.btn_signin.TabIndex = 0;
@@ -45,7 +46,8 @@
             // 
             // btn_signup
             // 
-            this.btn_signup.Location = new System.Drawing.Point(288, 58);
+            this.btn_signup.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_signup.Location = new System.Drawing.Point(289, 66);
             this.btn_signup.Name = "btn_signup";
             this.btn_signup.Size = new System.Drawing.Size(138, 58);
             this.btn_signup.TabIndex = 1;
@@ -56,15 +58,15 @@
             // lbl_Title
             // 
             this.lbl_Title.AutoSize = true;
-            this.lbl_Title.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Title.Location = new System.Drawing.Point(116, 9);
+            this.lbl_Title.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Title.Location = new System.Drawing.Point(52, 9);
             this.lbl_Title.Name = "lbl_Title";
-            this.lbl_Title.Size = new System.Drawing.Size(221, 17);
+            this.lbl_Title.Size = new System.Drawing.Size(342, 26);
             this.lbl_Title.TabIndex = 3;
             this.lbl_Title.Text = "WELCOME TO OUR SERVICE";
             this.lbl_Title.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // NavigationForm
+            // frm_NavigationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -72,9 +74,9 @@
             this.Controls.Add(this.lbl_Title);
             this.Controls.Add(this.btn_signup);
             this.Controls.Add(this.btn_signin);
-            this.Name = "NavigationForm";
+            this.Name = "frm_NavigationForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "NavigationForm";
+            this.Text = "Navigator";
             this.ResumeLayout(false);
             this.PerformLayout();
 
