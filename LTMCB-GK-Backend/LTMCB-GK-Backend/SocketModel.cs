@@ -39,7 +39,7 @@ namespace LTMCB_GK_Backend {
             String str = "";
             try {              
                 int k = socket.Receive(this.receiveDataArr);
-                Console.WriteLine("Client sent: ");
+                Console.Write("Client sent: ");
                 
                 char[] c = new char[k];
                 for (int i = 0; i < k; i++) {
@@ -47,6 +47,8 @@ namespace LTMCB_GK_Backend {
                     c[i] = Convert.ToChar(this.receiveDataArr[i]);
                 }
                 str = new String(c);
+
+                Console.Write("\n");
             } catch (Exception e) {
                 Console.WriteLine(e.Message);
                 //str = "Socket is closed with " + remoteEndPoint;
