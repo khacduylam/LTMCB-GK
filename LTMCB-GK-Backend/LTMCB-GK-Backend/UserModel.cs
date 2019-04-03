@@ -226,10 +226,13 @@ namespace LTMCB_GK_Backend {
                 
                 String hashedPassword = HashSHA1(password);
 
+                this.username = username;
+                this.money = 0.5;
+
                 BsonDocument newUser = new BsonDocument {
                     { "username", username },
                     { "password", hashedPassword },
-                    { "money", 0.0 }
+                    { "money", 0.5 }
 
                 };
 
@@ -273,8 +276,6 @@ namespace LTMCB_GK_Backend {
             try {
                 if(!this.isAuthenticated) {
                     throw new Exception("User not authorized");
-                } else if(newMoney < 0) {
-                    throw new Exception("Invalid money");
                 }
 
                 var database = this.DB.GetDatabase();
@@ -283,10 +284,11 @@ namespace LTMCB_GK_Backend {
 
                 var query = Builders<BsonDocument>.Filter.Eq("username", this.username);
                 var update = Builders<BsonDocument>.Update
-                    .Set("money", money + newMoney);
+                    .Set("money", (money + newMoney) >= 0 ? (money + newMoney) : 0.0);
                 users.UpdateOne(query, update);
 
-                this.money = this.money + newMoney;
+                this.money = (this.money + newMoney) >= 0 ?
+                    (this.money + newMoney) : 0.0; 
 
                 return true;
 

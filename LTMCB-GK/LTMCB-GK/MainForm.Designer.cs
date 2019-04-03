@@ -143,7 +143,6 @@
             this.rtb_Status.Size = new System.Drawing.Size(389, 127);
             this.rtb_Status.TabIndex = 17;
             this.rtb_Status.Text = "";
-            this.rtb_Status.TextChanged += new System.EventHandler(this.rtb_Status_TextChanged);
             // 
             // lbl_MoneyPerReq
             // 

@@ -39,7 +39,7 @@ namespace LTMCB_GK_Backend {
             String str = "";
             try {              
                 int k = socket.Receive(this.receiveDataArr);
-                Console.WriteLine("Client sent:");
+                Console.WriteLine("Client sent: ");
                 
                 char[] c = new char[k];
                 for (int i = 0; i < k; i++) {
@@ -59,6 +59,8 @@ namespace LTMCB_GK_Backend {
             try {
                 ASCIIEncoding encoding = new ASCIIEncoding();
                 socket.Send(encoding.GetBytes(str));
+
+                Console.WriteLine("Server sent: " + str);
             } catch (Exception e) {
                 Console.WriteLine(e.Message);
             }

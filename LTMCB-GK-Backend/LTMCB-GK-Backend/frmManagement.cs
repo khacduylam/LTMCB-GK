@@ -44,9 +44,12 @@ namespace LTMCB_GK_Backend {
                 this.service = new ServiceModel(ip, n);
             }
 
+            WrapBox wb = new WrapBox(lstConnectionManagement,
+                lstFunctionManagement);
+
             this.service.StartServer();
             Thread t = new Thread(this.service.ServeMultiClient);
-            t.Start(lstConnectionManagement);
+            t.Start(wb);
 
             btnStart.Enabled = false;
             btnStop.Enabled = true;
